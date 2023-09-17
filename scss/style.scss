@@ -1,0 +1,293 @@
+// VARIABLES================================
+$primaryColor: #095071;
+$blue_color: #1F2D48;
+$bgColor: #f4f2f0;
+$white_color: #fff;
+$black_color: #000;
+$orange_color: #dd8d32;
+$fontFam: 'Maven Pro', sans-serif;
+
+// MIXINS ===============================
+
+@mixin flex_cm($justifyContent, $alignItems) {
+    // Mixin with Parameters
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+@mixin objImg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+@mixin padd_cm{
+    padding: 50px 0;
+}
+@mixin btn{
+    max-width: 180px;
+    width: 100%;
+    text-align: center;
+    background: #BB8255;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    color:$white_color;
+    text-transform: uppercase;
+    &:hover{
+        background: $white_color;
+        color: $black_color;
+    }
+
+}
+@mixin box_shadow{
+    box-shadow: 0 0px 5px 4px #8f8f8f;
+}
+@mixin pos{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin dec_line{
+    text-decoration: double;
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+
+}
+// FONT_VAR>>> (MIXIN)==========
+
+@mixin h1 {
+    font: normal 500 43px/51px $fontFam;
+}
+@mixin h2 {
+    font: normal 500 29px/34px $fontFam;
+}
+@mixin h3 {
+    font: normal 700 18px/21px $fontFam;
+}
+
+// COMMON CSS =====================
+.container {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body,
+html,
+* {
+    font-family: 'Maven Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $primaryColor;
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.2s ease-in-out;
+}
+::selection {
+    background-color: #83b8be;
+}
+.desk-only{
+    display: block;
+}
+.mobile-only{
+    display: none;
+}
+ 
+// NESTING=======================
+.header-lala {
+    @include box_shadow;
+    padding: 40px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    .header-wrp {
+        @include flex_cm(space-between, center);
+        .header-left {
+            max-width: 330px;
+            width: 25%;
+        }
+        .header-center {
+            flex: 1;
+            text-align: center;
+            h1{
+                font-family: 'Yeon Sung', cursive !important;
+            }
+        }
+        .logo-header {
+            display: block;
+        }
+        .header-center h1 {
+            @include h1;
+        }
+        .header-nav {
+            max-width: 330px;
+            width: 25%;
+            ul {
+                @include flex_cm(space-between, center);
+                margin: 0 -15px;
+                li {
+                    padding: 15px;
+                    a {
+                        @include h3;
+                        text-transform: uppercase;
+                        &:hover {
+                            color: #dd8d32;
+                            text-decoration: underline;
+                            text-decoration-thickness: 3px;
+                            text-underline-offset: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.hero-sec {
+    background: $bgColor;
+ 
+    .hero-wrp {
+        @include flex_cm(space-between, center);
+        height:100vh;
+        h2 {
+            @include h2;
+            font-family: 'Yeon Sung', cursive !important;
+            span {
+                text-transform: uppercase;
+            }
+        }
+        .hero-left {
+            width: 70%;
+            position: relative;
+            height: 100%;
+            &::after {
+                content: '@ohlala';
+                position: absolute;
+                right: 20px;
+                bottom: 8px;
+                font-size: 45px;
+                font-family:'Yeon Sung', cursive !important;
+                font-weight: 700;
+            }
+            .hero-left-img,
+            .hero-left-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .hero-right {
+            flex: 1;
+            position: relative;
+            padding: 0 45px;
+            .cat-img {
+                width: 140px;
+                height: 100%;
+                margin: 15px auto;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+            .hero-right-inner {
+                max-width: 230px;
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+            }
+            .hero-rgt-btm {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 21px;
+            }
+        }
+    }
+}
+
+
+// ANIMATION =====================
+@keyframes animate {
+    0% {
+        background-position: 10%;
+    }
+    20% {
+        background-position: 20%;
+    }
+    30% {
+        background-position: 30%;
+    }
+    40% {
+        background-position: 40%;
+    }
+    50% {
+        background-position: 50%;
+    }
+    60% {
+        background-position: 60%;
+    }
+    70% {
+        background-position: 70%;
+    }
+    80% {
+        background-position: 80%;
+    }
+    90% {
+        background-position: 90%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes ani-text-one {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+
+
+// @ IMPORT  and PARTIALS===============
+@import 'offer.scss';
+@import 'contractor.scss';
+@import 'animate-text.scss';
+@import 'kitchen.scss';
+@import 'newsletter.scss';
+@import 'footer.scss';
+
+@import 'media.scss';// import media query always in last...
+
+
+
+
+

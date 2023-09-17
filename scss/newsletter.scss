@@ -1,0 +1,40 @@
+.newalwtter-section {
+    background: #f4f2f0;
+    margin: 50px 0 0;
+    padding: 70px 0;
+    border-bottom: 1px solid;
+    .newalwtter-wrp {
+        text-align: center;
+        .newsletter-top {
+            margin-bottom: 40px;
+            h2 {
+                margin-bottom: 10px;
+            }
+            
+        }
+        .newsletter-bottom {
+            form {
+                .news-input {
+                    @include flex_cm(center, center);
+                    input {
+                        max-width: 400px;
+                        width: 100%;
+                        padding: 10px 15px;
+                        outline: none;
+                        font-size: 16px;
+                        text-transform: capitalize;
+                        border-radius: 10px;
+                        border: none;
+                        height: 43px;
+                    }
+                    a {
+                        @include btn;
+                        font-size: 13px;
+                        flex: 1;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

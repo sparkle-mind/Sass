@@ -1,0 +1,268 @@
+@media screen and(max-width:1024px) {
+    @mixin h2 {
+        font: normal 500 20px/34px $fontFam;
+    }
+    @mixin h3 {
+        font: normal 700 14px/21px $fontFam;
+    }
+
+    .header-lala {
+        padding: 20px 0;
+        .header-wrp {
+            .header-left {
+                max-width: 100px !important;
+                width: 25%;
+            }
+            .header-center h1 {
+                font-size: 30px;
+            }
+            .header-nav ul li a {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .hero-sec {
+        h2 {
+            font: normal 500 19px/1.2 $fontFam;
+        }
+    }
+}
+@media screen and(max-width:991px) {
+    .desk-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+
+    .header-lala .header-nav {
+        width: 30%;
+    }
+    .hero-sec {
+        .hero-wrp {
+            h2 {
+                font: normal 500 29px/34px 'Maven Pro', sans-serif;
+                color: $white_color;
+                text-shadow: 2px 4px 2px $black_color;
+                span {
+                    color: $white_color;
+                }
+            }
+            .hero-left {
+                width: 100%;
+                overflow: hidden;
+                &::after {
+                    animation: rotation 0.3s infinite alternate;
+                }
+            }
+            .hero-right {
+                position: absolute;
+                left: 0;
+                right: 0;
+                .hero-right-inner {
+                    max-width: 310px;
+                    padding: 60px;
+                    outline: 30px solid #2f4f6d;
+                    height: 230px;
+                    overflow: auto;
+                    background: #f9f9f9;
+                    background-image: url('../images/kit-1.jpg');
+                    background-attachment: fixed;
+                    background-position: center;
+                    animation: animate 20s infinite linear alternate;
+                }
+            }
+        }
+    }
+
+    .contractor-section {
+        overflow: hidden;
+        padding: 25px 0 0;
+        .cont-wrp {
+            margin-bottom: 20px;
+            .cont-left {
+                width: 100%;
+                .cont-img {
+                    padding-top: 50%;
+                    max-width: 650px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            .cont-right {
+                .contr-cont {
+                    padding: 30px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .offer-section {
+        .offer-wrp {
+            flex-direction: column;
+            .offer-left {
+                flex-direction: column;
+                width: 100%;
+
+                .offer-rotation {
+                    margin: -50px 0 29px 0;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .offer-content {
+                    padding-left: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    margin: 5px 0 15px;
+                    text-align: center;
+                    line-height: 1.5;
+                }
+            }
+        }
+        .offer-right {
+            a {
+                @include btn;
+            }
+        }
+    }
+    .animated-text-section {
+        height: 60vh;
+    }
+
+    section.kitchen-section {
+        .kitchen-wrp {
+            flex-direction: column-reverse;
+            &:nth-child(even) {
+                flex-direction: column-reverse;
+            }
+            .kitchen-left {
+                width: 100%;
+                margin: 30px 0;
+                .kitchen-content {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+            .kitchen-right {
+                max-width: 600px;
+                margin: 40px auto 0 auto;
+                width: 100%;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+@media screen and(max-width:767px) {
+    .header-lala {
+        .header-center {
+            text-align: end !important;
+        }
+        .header-nav {
+            display: none;
+        }
+    }
+    .hero-sec {
+        .hero-wrp {
+            .hero-right {
+                .hero-right-inner {
+                    padding: 30px;
+                    height: 200px;
+                    outline: 20px solid #2f4f6d;
+                }
+                .hero-sec .hero-left::after {
+                    right: unset;
+                }
+            }
+        }
+    }
+    .contractor-section {
+        .cont-wrp {
+            .cont-right {
+                .contr-cont {
+                    padding: 30px 0 0 0;
+                    h4 {
+                        font-size: 24px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .animated-text-section {
+        .container {
+            .animated-text-wrp {
+                .bg-img {
+                    padding-top: 63%;
+                    span {
+                        font-size: 35px !important;
+                    }
+                }
+            }
+        }
+    }
+    .newalwtter-section {
+        margin-top: 20px;
+        .newalwtter-wrp {
+            .newsletter-bottom {
+                form {
+                    .news-input {
+                        flex-direction: column;
+                        input {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-lala {
+        .footer-wrp {
+            .ft-left {
+                @include flex_cm(space-between, start);
+                margin-bottom: 20px;
+                width: 100%;
+                ul {
+                    margin-left: 0;
+                    li {
+                        a {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .ft-right {
+                form {
+                    textarea {
+                        max-width: 100%;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and(max-width:575px) {
+    .hero-sec {
+        .hero-right-inner {
+            padding: 10px;
+            outline: 12px solid #2f4f6d;
+        }
+    }
+    .animated-text-section {
+        height: 40vh;
+    }
+    section.kitchen-section .kitchen-wrp .kitchen-left .kitchen-content p {
+        font-size: 16px;
+    }
+}
+
+

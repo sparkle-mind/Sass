@@ -1,0 +1,43 @@
+.offer-section {
+    background-color: $blue_color;
+    padding: 20px 0;
+    @include box_shadow;
+    margin: 50px 0;
+    .offer-wrp {
+        @include flex_cm(space-between, center);
+        .offer-left {
+            @include flex_cm(space-between, center);
+            width: 75%;
+
+            .offer-rotation {
+                width: 200px;
+                padding-top: 200px;
+                position: relative;
+                margin: -40px 0;
+                transition: all 0.2s ease-in-out;
+                img {
+                    @include objImg;
+                    border-radius: 50%;
+                }
+            }
+            .offer-content {
+                padding-left: 29px;
+                max-width: 700px;
+                width: 70%;
+
+                h2 {
+                    color: $white_color;
+                    margin-bottom: 15px;
+                }
+                p {
+                    @extend h2;
+                }
+            }
+        }
+        .offer-right {
+            a {
+                @include btn;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+section.kitchen-section{
+    background-color: $bgColor;
+   
+    .kitchen-wrp{
+        @include flex_cm(center,center);
+&:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+        .kitchen-left{
+            width: 50%;
+            .kitchen-content{
+                max-width: 570px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                &:hover h2{
+                    -webkit-text-stroke: 1px black;
+                    color: #fff !important;
+                }
+                h2{
+                @include h2;
+                @include dec_line;
+                font-family: 'Yeon Sung', cursive !important;
+                color:$orange_color;
+
+                }
+                p{
+                @include h3;
+                margin: 20px 0;
+                font-weight: normal;
+                }
+                a{
+                    @include btn;
+                    padding: 10px;
+                    &:hover{
+                      border: 1px solid #000;
+                    }
+
+                }
+            }
+        }
+        .kitchen-right{
+            width: 50%;
+            .kit-img{
+                position: relative;
+                padding-top: 65%;
+                img{
+                    @include objImg;
+                }
+            }
+        }
+
+    }
+}
+
